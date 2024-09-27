@@ -33,4 +33,6 @@ router.get("/patient/logout", isPatientAuthenticated, logoutPatient);
 router.get("/doctor/me", isDoctorAuthenticated, getUserDetails);
 router.get("/doctor/logout", isDoctorAuthenticated, logoutDoctor);
 
+router.get("/doctor/getall",  getAllDoctors);
+
 export default router;
