@@ -31,10 +31,10 @@ export const patientRegister = catchAsyncErrors(async (req, res, next) => {
   if (password !== confirmPassword) {
     return next(new ErrorHandler("Passwords do not match!", 400));
   }
-  // let user = await User.findOne({ email });
-  // if (user) {
-  //   return next(new ErrorHandler("user already registered", 400));
-  // }
+  let user = await User.findOne({ email });
+  if (user) {
+    return next(new ErrorHandler("user already registered", 400));
+  }
   user = await User.create({
     firstName,
     lastName,
