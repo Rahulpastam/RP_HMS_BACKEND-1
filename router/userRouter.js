@@ -18,8 +18,8 @@ import {
 
 const router = express.Router();
 router.post("/patient/register", patientRegister);
-router.post("/admin/register", isAdminAuthenticated, addNewAdmin);
-router.post("/doctor/register", isAdminAuthenticated, addNewDoctor);
+router.post("/admin/register", addNewAdmin);
+router.post("/doctor/register", addNewDoctor);
 router.post("/login", login);
 
 router.get("/doctors", getAllDoctors);
