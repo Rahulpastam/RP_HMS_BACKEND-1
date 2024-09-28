@@ -14,7 +14,6 @@ export const genrateToken = (user, message, statusCode, res) => {
     .cookie(cookieName, token, {
       expires: new Date(Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000),
       httpOnly: true,
-      domain: 'https://rphms-frontend-1.vercel.app',
       secure: true,
       sameSite: "None",
     })
