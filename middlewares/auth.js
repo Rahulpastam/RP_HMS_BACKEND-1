@@ -28,6 +28,7 @@ export const isPatientAuthenticated = catchAsyncErrors(
   async (req, res, next) => {
     const token = req.cookies.patientToken;
 
+
     if (!token) {
       return next(new ErrorHandler("Patient not Authenticated", 400));
     }

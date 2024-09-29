@@ -8,7 +8,6 @@ export const genrateToken = (user, message, statusCode, res) => {
   } else if (user.role === "Doctor") {
     cookieName = "doctorToken";
   }
-
   res
     .status(statusCode)
     .cookie(cookieName, token, {
